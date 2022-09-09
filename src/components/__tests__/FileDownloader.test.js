@@ -39,7 +39,7 @@ beforeAll(() => {
 });
 
 describe('FileDownloader follows the specified requirements', () => {
-    it('Only files that have a status of "available" are currently able to be downloaded.', () => {
+    it('Only files that are "available" can be selected and downloaded', () => {
         render(<FileDownloader files={mockFiles} />);
         fireEvent.click(screen.getByTestId("test-file-1-row")); //Click file row that should be disabled
         fireEvent.click(screen.getByText(/download selected/i)); //Click download button
