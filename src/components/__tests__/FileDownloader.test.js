@@ -43,7 +43,7 @@ describe('FileDownloader follows the specified requirements', () => {
         render(<FileDownloader files={mockFiles} />);
         fireEvent.click(screen.getByTestId("test-file-1-row")); //Click file row that should be disabled
         fireEvent.click(screen.getByText(/download selected/i)); //Click download button
-        expect(window.alert).toHaveBeenNthCalledWith(1,"You must select at least one file to download.") //Verify file wasn't selected/downloaded
+        expect(window.alert).toHaveBeenCalledWith("You must select at least one file to download.") //Verify file wasn't selected/downloaded
     });
 
     //TODO Add more tests when time allows
